@@ -1,0 +1,700 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>KIE University of Azad Jammu & Kashmir :: Faculty :: Home</TITLE>
+<META name=date content="Fri, 4 Jan 2013 14:44:16 -0560">
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META name=GENERATOR content="MSHTML 8.00.7600.16385">
+
+<style type="text/css">
+
+/* Circle Text Styles */
+#outerCircleText {
+/* Optional - DO NOT SET FONT-SIZE HERE, SET IT IN THE SCRIPT */
+font-style: italic;
+font-weight: bold;
+font-family: 'comic sans ms', verdana, arial;
+color: #000;
+/* End Optional */
+
+/* Start Required - Do Not Edit */
+position: absolute;top: 0;left: 0;z-index: 3000;cursor: default;}
+#outerCircleText div {position: relative;}
+#outerCircleText div div {position: absolute;top: 0;left: 0;text-align: center;}
+/* End Required */
+/* End Circle Text Styles */
+</style>
+<script type="text/javascript">
+
+/* Circling text trail- Tim Tilton
+   Website: http://www.tempermedia.com/
+   Visit: http://www.dynamicdrive.com/ for Original Source and tons of scripts
+   Modified Here for more flexibility and modern browser support
+   Modifications as first seen in http://www.dynamicdrive.com/forums/
+   username:jscheuer1 - This notice must remain for legal use
+   */
+
+;(function(){
+
+// Your message here (QUOTED STRING)
+var msg = "Welcome Fellows";
+
+/* THE REST OF THE EDITABLE VALUES BELOW ARE ALL UNQUOTED NUMBERS */
+
+// Set font's style size for calculating dimensions
+// Set to number of desired pixels font size (decimal and negative numbers not allowed)
+var size = 24;
+
+// Set both to 1 for plain circle, set one of them to 2 for oval
+// Other numbers & decimals can have interesting effects, keep these low (0 to 3)
+var circleY = 0.75; var circleX = 2;
+
+// The larger this divisor, the smaller the spaces between letters
+// (decimals allowed, not negative numbers)
+var letter_spacing = 5;
+
+// The larger this multiplier, the bigger the circle/oval
+// (decimals allowed, not negative numbers, some rounding is applied)
+var diameter = 10;
+
+// Rotation speed, set it negative if you want it to spin clockwise (decimals allowed)
+var rotation = 0.4;
+
+// This is not the rotation speed, its the reaction speed, keep low!
+// Set this to 1 or a decimal less than one (decimals allowed, not negative numbers)
+var speed = 0.3;
+
+////////////////////// Stop Editing //////////////////////
+
+if (!window.addEventListener && !window.attachEvent || !document.createElement) return;
+
+msg = msg.split('');
+var n = msg.length - 1, a = Math.round(size * diameter * 0.208333), currStep = 20,
+ymouse = a * circleY + 20, xmouse = a * circleX + 20, y = [], x = [], Y = [], X = [],
+o = document.createElement('div'), oi = document.createElement('div'),
+b = document.compatMode && document.compatMode != "BackCompat"? document.documentElement : document.body,
+
+mouse = function(e){
+ e = e || window.event;
+ ymouse = !isNaN(e.pageY)? e.pageY : e.clientY; // y-position
+ xmouse = !isNaN(e.pageX)? e.pageX : e.clientX; // x-position
+},
+
+makecircle = function(){ // rotation/positioning
+ if(init.nopy){
+  o.style.top = (b || document.body).scrollTop + 'px';
+  o.style.left = (b || document.body).scrollLeft + 'px';
+ };
+ currStep -= rotation;
+ for (var d, i = n; i > -1; --i){ // makes the circle
+  d = document.getElementById('iemsg' + i).style;
+  d.top = Math.round(y[i] + a * Math.sin((currStep + i) / letter_spacing) * circleY - 15) + 'px';
+  d.left = Math.round(x[i] + a * Math.cos((currStep + i) / letter_spacing) * circleX) + 'px';
+ };
+},
+
+drag = function(){ // makes the resistance
+ y[0] = Y[0] += (ymouse - Y[0]) * speed;
+ x[0] = X[0] += (xmouse - 20 - X[0]) * speed;
+ for (var i = n; i > 0; --i){
+  y[i] = Y[i] += (y[i-1] - Y[i]) * speed;
+  x[i] = X[i] += (x[i-1] - X[i]) * speed;
+ };
+ makecircle();
+},
+
+init = function(){ // appends message divs, & sets initial values for positioning arrays
+ if(!isNaN(window.pageYOffset)){
+  ymouse += window.pageYOffset;
+  xmouse += window.pageXOffset;
+ } else init.nopy = true;
+ for (var d, i = n; i > -1; --i){
+  d = document.createElement('div'); d.id = 'iemsg' + i;
+  d.style.height = d.style.width = a + 'px';
+  d.appendChild(document.createTextNode(msg[i]));
+  oi.appendChild(d); y[i] = x[i] = Y[i] = X[i] = 0;
+ };
+ o.appendChild(oi); document.body.appendChild(o);
+ setInterval(drag, 25);
+},
+
+ascroll = function(){
+ ymouse += window.pageYOffset;
+ xmouse += window.pageXOffset;
+ window.removeEventListener('scroll', ascroll, false);
+};
+
+o.id = 'outerCircleText'; o.style.fontSize = size + 'px';
+
+if (window.addEventListener){
+ window.addEventListener('load', init, false);
+ document.addEventListener('mouseover', mouse, false);
+ document.addEventListener('mousemove', mouse, false);
+  if (/Apple/.test(navigator.vendor))
+   window.addEventListener('scroll', ascroll, false);
+}
+else if (window.attachEvent){
+ window.attachEvent('onload', init);
+ document.attachEvent('onmousemove', mouse);
+};
+
+})();
+
+</script>
+
+</head>
+
+
+</style> 
+
+<style>
+
+HTML {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM:
+0px; MARGIN-TOP: 0px; MARGIN-LEFT: 0Px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; 
+MARGIN-BOTTOM: 0px; HEIGHT: 100%; BORDER-TOP: medium none; BORDER-RIGHT: 
+medium none; PADDING-TOP: 0px
+}
+BODY {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: 
+0px; MARGIN-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; 
+MARGIN-BOTTOM: 0px; HEIGHT: 100%; BORDER-TOP: medium none; BORDER-RIGHT: 
+medium none; PADDING-TOP: 0px; MARGIN-LEFT: 0px; MARGIN-RIGHT: 0px; 
+}
+
+body {
+  /* Location of the image */
+  background-image: url(https://1.bp.blogspot.com/-yu4UoI2ITU0/WawOeAdtg-I/AAAAAAAAKpg/sJLaUp901BMpTuCqUAa6UXI1Q0CBGWQAwCLcBGAs/s1600/12.jpg);
+  
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+  
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #464646;
+}
+
+BODY {
+	BACKGROUND-COLOR: #ffffff
+}
+BODY {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+TD {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+P {
+	FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+H1 {
+	FONT-SIZE: 18px; FONT-WEIGHT: bold
+}
+H2 {
+	FONT-SIZE: 15px; FONT-WEIGHT: bold
+}
+H3 {
+	COLOR: #000000; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+H4 {
+	COLOR: #000000; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+H5 {
+	COLOR: #000000; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+H6 {
+	COLOR: #000000; FONT-SIZE: 8px; FONT-WEIGHT: bold
+}
+A {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #000000; 
+TEXT-DECORATION: underline
+}
+A:hover {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #000000;
+TEXT-DECORATION: none
+}
+.bold {
+	FONT-WEIGHT: bold
+}
+.title {
+	FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.subtitle {
+	FONT-SIZE: 11px; FONT-WEIGHT: bold
+}
+#headerpic {
+	BACKGROUND-IMAGE: url(../images/header_image.jpg); BACKGROUND-REPEAT: 
+no-repeat
+}
+#header {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 
+90px; PADDING-TOP: 0px
+}
+.height_all {
+	HEIGHT: 100%
+}
+.spacer {
+	WIDTH: 100%
+}
+mainBackground {
+	POSITION: absolute; WIDTH: 100%; HEIGHT: 100%; TOP: 0px; LEFT: 0px 
+}
+
+#siteFrame {
+    position: absolute; left: 50%; width: 754px; margin-left: -397px; padding-left: 19px;
+}
+
+#homepage_main_area { 
+    float:right; padding-top:20px; width:754px; 	padding-bottom:20px; padding-left:0px;
+}
+
+#leftcol {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; WIDTH: 185px; PADDING-RIGHT: 
+0px; FLOAT: left; PADDING-TOP: 10px
+}
+#leftcol_subpage {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 14px; WIDTH: 186px; PADDING-RIGHT: 
+0px; FLOAT: left; PADDING-TOP: 20px
+}
+#rightcol_subpage {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 0px; WIDTH: 549px; FLOAT: right;
+PADDING-TOP: 20px
+}
+#rightcol {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 0px; WIDTH: 548px; FLOAT: right;
+PADDING-TOP: 10px
+}
+#logo {
+	POSITION: relative
+}
+rightSide {
+	PADDING-RIGHT: 8px; BORDER-TOP: #8b0703 1px solid; MARGIN-RIGHT: 8px; 
+PADDING-TOP: 8px
+}
+#rightSide TD {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+rightSideHome {
+	BORDER-TOP: #4a89bf 1px solid; PADDING-TOP: 8px
+}
+#FlashBarBottom {
+	BORDER-BOTTOM: #4a89bf 1px solid; PADDING-BOTTOM: 8px
+}
+#LeftNavTitle {
+	HEIGHT: 20px; COLOR: #6e301d; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+#FlashBarBottom_boc {
+	BORDER-BOTTOM: #8b0703 1px solid; PADDING-BOTTOM: 8px
+}
+#RightSide_boc {
+	BORDER-TOP: #8b0703 1px solid; PADDING-TOP: 8px
+}
+#LeftNavTitle_boc {
+	HEIGHT: 30px; COLOR: #8b0703; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.TitleBar_boc {
+	COLOR: #8b0703; FONT-SIZE: 14px; BORDER-TOP: #8b0703 1px solid; 
+FONT-WEIGHT: bold; PADDING-TOP: 8px
+}
+.colour_boc {
+	COLOR: #8b0703
+}
+.colour_boc_title {
+	HEIGHT: 35px; COLOR: #8b0703; FONT-SIZE: 18px; VERTICAL-ALIGN: top;
+FONT-WEIGHT: bold
+}
+#RightNavTitle {
+	HEIGHT: 30px; FONT-SIZE: 11px
+}
+#textBox {
+	PADDING-BOTTOM: 20px; BACKGROUND-COLOR: #e8eaf0; PADDING-LEFT: 20px;
+WIDTH: auto; PADDING-RIGHT: 20px; HEIGHT: auto; FONT-SIZE: 1.1em;
+PADDING-TOP: 20px
+}
+#textBox_02 {
+	PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #e6eff6; PADDING-LEFT: 10px; 
+WIDTH: auto; PADDING-RIGHT: 10px; HEIGHT: auto; PADDING-TOP: 5px
+}
+.imageright {
+	PADDING-BOTTOM: 8px; MARGIN: 8px; PADDING-LEFT: 8px; PADDING-RIGHT: 
+8px; FLOAT: right; PADDING-TOP: 8px
+}
+.imageleft {
+	PADDING-BOTTOM: 5px; PADDING-RIGHT: 5px; FLOAT: left
+}
+#wrapper {
+	BORDER-BOTTOM: #6c6c6c 1px solid; BORDER-LEFT: #6c6c6c 1px solid;
+BACKGROUND-COLOR: white; MARGIN-TOP: 6px; WIDTH: 754px; BORDER-COLLAPSE:
+separate; MARGIN-BOTTOM: 0px; BORDER-TOP: #6c6c6c 1px solid; 
+BORDER-RIGHT: #6c6c6c 1px solid
+}
+.eventsback {
+	BACKGROUND-COLOR: #f4efe9
+}
+#main {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; HEIGHT: 100%
+}
+.FlashBar {
+	COLOR: #8b0703; FONT-SIZE: 14px; BORDER-TOP: #8b0703 1px solid;
+FONT-WEIGHT: bold; PADDING-TOP: 8px
+}
+.textsmall {
+	FONT-SIZE: 0.8em
+}
+.textregular {
+	FONT-SIZE: 1em
+}
+.textlarge {
+	FONT-SIZE: 1.2em
+}
+.rightnavdivider {
+	BORDER-BOTTOM: #dbe0e6 1px solid; FONT-SIZE: 12px
+}
+.rightnavdivider A {
+	FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.rightnavdivider A:hover {
+	FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+#rightnavdividerbottom {
+	FONT-SIZE: 12px
+}
+#rightnavdividerbottom A {
+	FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+#rightnavdividerbottom A:hover {
+	FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+#footer {
+	PADDING-BOTTOM: 10px; BACKGROUND-COLOR: #f0f1f4; PADDING-LEFT: 10px; 
+PADDING-RIGHT: 10px; HEIGHT: 15px; CLEAR: both; BORDER-TOP: #b8c0cd 1px 
+solid; PADDING-TOP: 10px
+}
+#leftnavimenu {
+	MARGIN: 0px; PADDING-LEFT: 0px
+}
+#leftnavimenu {
+	WIDTH: 161px; COLOR: #342f28
+}
+#leftnavimenu TR TD {
+	BORDER-TOP: #bbb 1px solid
+}
+#leftnavimenu TR TD A {
+	COLOR: #342f28; TEXT-DECORATION: none
+}
+#leftnavimenu TR TD A:hover {
+	COLOR: #342f28; TEXT-DECORATION: underline
+}
+.level2menu {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 32px; PADDING-RIGHT: 2px; 
+BACKGROUND: #edeef2; PADDING-TOP: 2px
+}
+.level1menu {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 16px; PADDING-RIGHT: 2px; 
+PADDING-TOP: 2px
+}
+.level1menuopen {
+	BACKGROUND-IMAGE: url(../images/down_arrow.gif); PADDING-BOTTOM: 2px; 
+BACKGROUND-COLOR: #dcdee6; PADDING-LEFT: 16px; PADDING-RIGHT: 2px;
+BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 2px 3px; PADDING-TOP: 
+2px
+}
+.level1menuactive {
+	BACKGROUND-IMAGE: url(../images/side_arrow.gif); PADDING-BOTTOM: 2px;
+BACKGROUND-COLOR: #dcdee6; PADDING-LEFT: 16px; PADDING-RIGHT: 2px;
+BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 2px 3px; PADDING-TOP: 
+2px
+}
+.level2menuactive {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 32px; PADDING-RIGHT: 2px; 
+BACKGROUND: url(../images/side_arrow_sub.gif) #edeef2 no-repeat 19px 
+3px; PADDING-TOP: 2px
+}
+#news-image-caption {
+	WIDTH: 315px; FLOAT: right
+}
+#news-image-caption P {
+	PADDING-LEFT: 10px; MARGIN-LEFT: 10px; align: left
+}
+A IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 
+0px
+}
+#topnav {
+	BACKGROUND-IMAGE: url(../images/topnav_bg.jpg); TEXT-ALIGN: center;
+LINE-HEIGHT: 30px; WIDTH: 754px; BACKGROUND-REPEAT: repeat-x; FLOAT:
+left; HEIGHT: 30px
+}
+#topnav UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 
+0px; PADDING-RIGHT: 0px; WHITE-SPACE: nowrap; PADDING-TOP: 0px
+}
+#topnav LI {
+	LIST-STYLE-TYPE: none; MARGIN: 0px; DISPLAY: inline; WHITE-SPACE: 
+nowrap
+}
+#topnav LI A {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; TEXT-TRANSFORM: uppercase;
+MARGIN: 0px 30px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #011b58; 
+FONT-SIZE: 11px; FONT-WEIGHT: bolder; TEXT-DECORATION: none; 
+PADDING-TOP: 0px
+}
+#topnav A:hover {
+	COLOR: #669966; TEXT-DECORATION: none
+}
+
+</style>
+<BODY>
+<body background ="http://myangelcardreadings.com/images/blacksnow.gif" bgproperties="stretch">
+<bgsound src="https://1.bp.blogspot.com/-yu4UoI2ITU0/WawOeAdtg-I/AAAAAAAAKpg/sJLaUp901BMpTuCqUAa6UXI1Q0CBGWQAwCLcBGAs/s1600/12.mdi" loop=infinite>
+<DIV id=mainBackground>
+<DIV id=siteFrame>
+<DIV id=wrapper>
+<DIV id=header>
+<TABLE border=0 cellSpacing=0 cellPadding=0 width=754>
+  <TBODY>
+      <P style="TEXT-ALIGN: justify"></P>
+      <P style="TEXT-ALIGN: justify"></P>
+      
+  <TR vAlign=top align=left></TR><TR>
+    <TD width=236><IMG 
+      style="BORDER-BOTTOM: 0pt; BORDER-LEFT: 0pt; BORDER-TOP: 0pt; BORDER-RIGHT: 0pt" 
+      title="KIE (UAJ&K)" alt=" Kashmir Institute of Economics (UAJ&K)" 
+      src="https://drsz.000webhostapp.com/img/ak_kie.jpg" height=60 width=60></TD>
+    <TD style="FONT-WEIGHT: bold" vAlign=bottom width=518 align=right>
+      <H1>Mr.&nbsp; Sohail Zafar Qureshi &nbsp;&nbsp; </H1><H4>Ex: Assistant Professor (VU), &nbsp; Ex: Senior Research Associate Policy (PITAD) &nbsp;&nbsp; </H4> </TD>
+      
+      </TR>
+</TBODY></TABLE></DIV>
+<DIV id=topnav>
+<UL>
+  <LI><A 
+  href="https://drsz.000webhostapp.com/aa_index.html">
+  Home</A>
+  <LI><A 
+  href="https://drsz.000webhostapp.com/ajku/ak_cv.html">
+  C.V.</A>
+  <LI><A 
+  href="https://drsz.000webhostapp.com/ajku/published_paper_series.html">
+  Publications</A>
+  <LI><A 
+  href="https://drsz.000webhostapp.com/ajku/working_paper_series.html">Conference Paper</A>
+  <LI><A 
+  href="https://drsz.000webhostapp.com/ajku/ak_teaching.html">Teaching</A></LI>
+  <LI><A 
+  href="https://drsz.000webhostapp.com/ajku/ak_blog3.html">Blog</A></LI></UL></DIV>
+<DIV id=homepage_main_area>
+<P style="TEXT-ALIGN: center">
+<TABLE style="TEXT-ALIGN: right; HEIGHT: 400px" border=0 cellPadding=20 
+width="100%">
+  <TBODY style="TEXT-ALIGN: left">
+  <TR style="TEXT-ALIGN: left">
+    <TD style="TEXT-ALIGN: top-left">
+      <P style="TEXT-ALIGN: center">&nbsp;<IMG title="Assistant Professor picture" 
+      alt="Mr. Sohail Zafar Qureshi" 
+      src="https://drsz.000webhostapp.com/img/SZ_personnel_picture.jpg" 
+      width=150 height=125></P>
+
+
+      <P style="TEXT-ALIGN: center">
+          <marquee scrollamount="3" scrolldelay="10" direction="left" loop="99"><font color="#0181B1"> 
+Peace be on Hussain, and on Ali son of Hussain, and on the children of Hussain, and on the friends of Hussain.
+ </font></marquee>&nbsp;</P>
+ 
+      <P style="TEXT-ALIGN: center">&nbsp;<B>Highlights</B></P>
+      <P style="TEXT-ALIGN: center"; height="209" colspan="2" align="center" valign="middle" bordercolor="#FFFFFF" background="hilight_shad.jpg" bgcolor="#FFFbFFF">
+      <iframe id="NewsWindow" src="https://drsz.000webhostapp.com/ajku/News.html" width="210" height="195" marginwidth="0" marginheight="0" frameborder="0" scrolling="No" framebackground="#FFFFFF" >
+
+</iframe> </p>
+
+
+       
+          <P style="TEXT-ALIGN: center">&nbsp;</P>
+          
+          <!-------------------------https://pmo.gov.pk/images/pakistan_gl_e0.gif-------------------->
+
+<P style="TEXT-ALIGN: center">&nbsp;<img src="http://1.bp.blogspot.com/-9Bpzv3YW3hU/TkbIUU6VsLI/AAAAAAAAEBU/fxs5PwKBfBk/s1600/Pakistan+Flag.gif" width="140" height="140" 
+       alt="Independence Day "><br> Greetings.
+       </P>
+<P style="TEXT-ALIGN: center">&nbsp;<img src="
+http://3.bp.blogspot.com/-wdMJpA5OpmU/TdCcvUhVwzI/AAAAAAAABBo/zbtyZnshuQc/s1600/Animated+Flag+of+Poland+Polish+Flag+Animation+%25282%2529.gif" width="28" height="28" 
+       alt="Independence Day ">
+       
+       &nbsp;<img src="http://gifimage.net/wp-content/uploads/2017/11/french-flag-gif-9.gif" width="28" height="28" 
+       alt="Independence Day ">
+       
+       &nbsp;<img src="http://bestanimations.com/Flags/Europe/Western/Scandinavia/norway/norwegian-flag-waing-gif-animation-7.gif" width="28" height="28" 
+       alt="Independence Day ">
+       
+      &nbsp;<img src="https://media.giphy.com/media/PkY5LXsqpe86c/giphy.gif" width="28" height="28" 
+       alt="Independence Day ">
+       
+       &nbsp;<img src="http://3.bp.blogspot.com/-5d13p9jG80U/UKFS70l7XUI/AAAAAAAADU0/6kJb0UFM9HE/s1600/Animated+flag+of+Denmark+animation+(5).gif" width="28" height="28" 
+       alt="Independence Day ">
+       
+       &nbsp;<img src="https://i.gifer.com/MiLQ.gif" width="28" height="28" 
+       alt="Independence Day ">
+       
+       &nbsp;<img src="https://4.bp.blogspot.com/-yqNOLxpV7_Q/WTxfxsIjD7I/AAAAAAAAMQI/AaZNXR-Ah-EAI9TIKCoI92w0UGfJTLVkACLcB/s1600/PinterestAmericanFlagripplinggifMay2017.gif" width="28" height="28" 
+       alt="Independence Day ">
+       
+       &nbsp;<img src="https://tse2.mm.bing.net/th?id=OIP.26lHxCqepgOYP01MIl0EhQHaE4&pid=Api&P=0&w=261&h=173" width="28" height="28" 
+       alt="Independence Day ">
+       <br>  </P>
+
+
+
+      <P style="TEXT-ALIGN: center">&nbsp; <iframe scrolling="no" frameborder="no" clocktype="html5" style="overflow:hidden;border:0;margin:0;padding:0;width:175px;height:34px;"src="https://www.clocklink.com/html5embed.php?clock=sdt&timezone=Pakistan_Islamabad&color=blue&size=175&Title=&Message=&Target=&From=2019,1,1,0,0,0&Color=blue"></iframe></P>
+     
+
+      <P style="TEXT-ALIGN: left">&nbsp;<iframe 
+      src="http://free.timeanddate.com/clock/ie19jf9/n106/fs9/fc3b71b7/ahr/tt0/tw1/tm1" frameborder="0" width="150" 
+      height="14"></iframe></P>
+      <P style="TEXT-ALIGN: center">&nbsp;
+ 
+ <!---translation--->
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+ <!---End translation--->
+
+
+       </P>
+      <P style="TEXT-ALIGN: center"> &nbsp;</P>
+
+       <P style="TEXT-ALIGN: center"> 
+<script type="text/javascript" src="https://rf.revolvermaps.com/0/0/1.js?i=5qdnsx1gd0c&amp;s=220&amp;m=0&amp;v=false&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000" async="async"></script></p>
+
+   
+       
+      
+      <P style="TEXT-ALIGN: justify"></P>
+      <P style="TEXT-ALIGN: center">&nbsp;<img src="http://cms.ku.dk/samf-sites/econ-sites/econ/english/images/DepartmentEconomicsCopenhagen.jpg" width="210" height="140" 
+       alt="Economics">
+       </P>
+      
+        <P style="TEXT-ALIGN: center">&nbsp;<img src="https://drsznet.000webhostapp.com/img/SZ_personnel_qr.jpeg" width="210" height="140" 
+       alt="Islamabad-Lahore"><br>
+       </P>
+       <P style="TEXT-ALIGN: center">&nbsp;</P>
+       
+
+      </TD>
+      <TD style="TEXT-ALIGN: left">
+
+
+      <B>Title: </B> PhD Scholar, Migrate Qur'an (4: 97) 
+      <P><B>Subject: </B>Business Economics, Macroeconomics, Divine Economics</P>
+      <P><B>Specialty: </B>Production Economics and Performance Measurement 
+      </P>
+      <P><B>Phone: </B>-</P>
+      <P><B>Fax:</B> -</P>
+      <P><B>Mob Phone: </B>0092-347-5443524</P>
+      <P><B>Ex: Office: </B>Kashmir Institute of Economics, University of Azad Jammu and Kashmir</P>
+      <P><B>Email: </B><A 
+      href="mailto:sohailzaffar_pk@hotmail.com">sohailzaffar_pk@hotmail.com</A>&nbsp;&nbsp;<A 
+      href="mailto:sohail.zafar@iiu.edu.pk">sohail.zafar@iiu.edu.pk </A></P>
+      <P><A  href="https://portals.au.edu.pk/jobs/candidate/view-cv.aspx"> view short cv</A></P>
+      <P style="TEXT-ALIGN: justify">Mr. Sohail Zafar is PhD Scholar (Migrate)  
+      in Kashmir Institute of Economics:
+      University of Azad Jammu and Kashmir. He has migration certificate to join other univeristy for his degree Qur'an (4:97).
+      He is applicant for honor in Economics year 2023. His main research 
+      focuses on Financial Economics & Divine Economics. Mr. Sohhail Zafar examines production economics and 
+      performance measurement, efficiency and productivity measurement in National Bank of Pakistan. His work has 
+      been published or is forthcoming in academic inland and international journals including  
+      <I>International Journal of Organizational Innovation</I> United States of America, <I>Pakistan Development 
+      Review 
+      </I> Pakisan, <I>Zeinath Journal Multidisciplinary Research  
+      </I> India, <I> African Journal of Business and Management </I> South Africa <I>Corporate Governance An 
+      International Review </I> Italy and 
+      <I> Humanities Journal of Social Sciences </I> United States of America.</P>
+      <DIV style="TEXT-ALIGN: justify"></DIV>
+      <P style="TEXT-ALIGN: justify">Before joining Kashmir Institute of Economics. He was Assistant Professor in 
+      Virtual University Chakwal. He had taught several MBA courses of business and economics such as Macroeconomics, 
+      International Finance, International Financial Management, Development Economics, Money and Banking. Mr. Sohail 
+      have extensive experience of teaching and research. He taught different courses in 
+      visiting faculty in colleges institutes and universities. During Ph. D Finance he also held visiting lecturer 
+      teaching BS and BS-IT students subject of Microeconomics.
+      He was Senior Research Associate Trade Policy in Ministry of Commerce Government of Pakistan: Pakistan  
+      Institute of Trade and Development Islamabad, where he supervised different trade policy projects.
+      He was honored Role Model.</p><P style="TEXT-ALIGN: justify"> In year 2014 Mr. Qureshi had a proposal of export 
+      import bank worth 4 million and 
+      in year 2016 he had proposal to Kashmir Institute of Economics, Higher Education Commission Pakistan worth 1.5 
+      billion a project on China Pakistan Economic Corridor on banking sector efficiency with induction of Chinese 
+      Students in AK.</P>  
+      <P style="TEXT-ALIGN: justify"> Mr. Sohail Zafar received MA Economics and MPhil in Economics from University 
+      of the Punjab and Quaid-i-Azam. The top ranked university of Pakistan. Degrees approved and recognized by 
+      University Grant Commission of Pakistan, for sixteen and eighteen years of schooling for higher education and 
+      research abroad.</p>
+      <P style="TEXT-ALIGN: justify"> He also hold several courses of Ph. D 
+      Finance in International Islamic University Islamabad. From 2002-08 he had interest in Ph. D from abroad and 
+      had equivalence in several international Masters, MSC Economics Uk, equivalence M.Com Uk for place in M.Phil 
+      leading  
+      to Ph. D in Birmingham University Uk, Economics in University of Wales Swansea Uk and in year 2000, In Liverpool 
+      M.Phil Economics leading to Ph. D. For Ph. D Pakistan Development Review, Journal of Pakistan Institute of 
+      Development Economics recognized him based at University of Lavel Qubic Canada. He also hold place in Queens 
+      University Belfast and Aalborg University Denmark.  
+      Mr. Qureshi have Scholarships/Financial awards and Bursaries for higher education abroad including 2000 
+      pounds from University of Wales Swansea Uk.</p> 
+      <P style="TEXT-ALIGN: justify">To his passport, Mr. Qureshi visited several countries in pursuit of knowledge 
+      including Denmark, Ireland, France and Uk (London, Manchester, Liverpool, Belfast) on several occasion. 
+      Mr. Qureshi has unfortunate to regret for his arranged visits to Sweden (hunting from closet fellow), 
+      Norway (from girlfriend) and New York for twice including arrangements in Denmark. For perhaps, Mr. Qureshi have 
+      delayed international flight. 
+      Presently he is invited in conference in Denmark in year 2017, and Athens.
+      </p> 
+      <P style="TEXT-ALIGN: justify">In Ministry of Commerce Mr. Qureshi had supervision of trade policy Research 
+      Associates for several European agreements including free trade agreement documents with challenging policy 
+      deadlines. In his professional 
+      excellence his file remains recommended for future employment in Pakistan Institute of Trade and Development 
+      after expiry 
+      of his contract as Senior Research Associate Policy. Besides Trade Policy research for several policies he also 
+      had Ph. D courses of Finance from International Islamic University Islamabad in the year 2008 to 2010. In 
+      International Islamic University, Ph. D committee awarded him relaxation in research methodology a Ph. D course 
+      on recognition of his academic and research potential. University of Azad Jammu & Kashmir also recognized the 
+      exemption and awarded relaxation in Ph. D plan in Kashmir Institute of Economics. </p> 
+      <P style="TEXT-ALIGN: justify">Mr. Qureshi is tutor of Allama Iqbal Open University Islamabad for several 
+      Bachelors and Master level courses including Business Statistics, Business Economics, Macroeconomics. He also had 
+      Workshops of Master Level students in the subject of Macroeconomics, Microeconomics and Mathematical Economics 
+      in several campuses of Allama Iqbal Open University Islamabad.</p>
+      <P style="TEXT-ALIGN: justify">Based on academics of Mr. Sohail Zafar and his Pedagogical experience at 
+       university level, Roskilde University Denmark awarded him qualified, a lecturer and supervisor in Denmark.</p>
+       
+      
+      </TD></TR></TBODY></TABLE></P><BR></DIV>
+      <p style="TEXT-ALIGN: Center" >
+      <!-- hitwebcounter Code START -->
+      <a href="http://www.hitwebcounter.com/counterresources.php" target="_blank">
+      <img src="http://hitwebcounter.com/counter/counter.php?page=5016563&style=0006&nbdigits=6&type=page&initCount=003887" title="" Alt=""   border="0" >
+      </a><br/>
+      <!-- hitwebcounter.com --><a href="http://www.hitwebcounter.com/" title="Top Web Counter" 
+      target="_blank" style="font-family: Arial, Helvetica, sans-serif; 
+      font-size: 11px; color: #9A96A3; text-decoration: underline ;"><em></em>
+      </a>   
+      </p>
+      <DIV id=footer>
+      <TABLE cellSpacing=0 cellPadding=0 width=100%>
+      <TBODY>
+      <TR>
+      <TD width=428><A class=footer href="" 
+      target=_blank>KIE (UAJK)</A> | <A class=footer 
+      href="" target=_blank>University of Azad Jammu & Kashmir</A></TD>
+      <TD width=302 align=right>© KIE (UAJK) 
+      </TD></TR></TBODY></TABLE></DIV></DIV></DIV></DIV> 
+      
+     </body></HTML>
