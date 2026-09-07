@@ -382,71 +382,20 @@ href=""> Teaching</A>
 
 
 
-
-
-
-
-    
-
-
-<h1>Text to Speech Reader</h1>
-
-    
-
-<!-- Control Panel -->
-    
-<div class="controls">
+ <div>
+        <button id="playPauseBtn">Play</button>
+        <button id="stopBtn">Stop</button>
+        <button id="prevBtn">Previous Paragraph</button>
+        <button id="nextBtn">Next Paragraph</button>
         
-<button onclick="startSpeaking()">? Play / Resume</button>
-        
-<button onclick="pauseSpeaking()">? Pause</button>
-        
-<button onclick="stopSpeaking()">? Stop</button>
-        
-<button onclick="movePrevious()">?? Move Up (Prev)</button>
-        
-<button onclick="moveNext()">?? Move Down (Next)</button>
-        
-        
+        <label for="volume">Volume:</label>
+        <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+    </div>
 
-<div class="volume-container">
-            
-<label for="volume">?? Volume:</label>
-            
-<input type="range" id="volume" min="0" max="1" step="0.1" value="1" onchange="updateVolume()">
-        
-</div>
-    
-</div>
+    <!-- Unlimited Text Content Container -->
+    <div id="textContainer">
 
-    
-
-<!-- Text to be Read -->
-    
-
-<div class="text-container" id="textToRead">
-        
-
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<P style="TEXT-ALIGN: justify">
+		<P style="TEXT-ALIGN: justify">
 <A  href="https://drsznet.github.io/drszq/aa1_index.html">
 Public health, unlike medicine </A>, is not about doctors treating individual patients. Public health is about population health. It is a collective social effort to promote health and prevent diseases  both communicable and noncommunicable  and disability that involves population surveillance, regulation of determinants of health (such as food safety and sanitation), and the provision of key health services with an emphasis on prevention. Because private actors lack sufficient incentive and ability to undertake population-wide measures, public health is a vital resource for which government is the crucial provider, enabled by its police powers and its ability to regulate, tax, and spend. The exercise of government powers for the health of its population raises ethical issues, such as public welfare, individual autonomy and freedom, privacy and confidentiality, just distribution of benefits and burdens, transparency, and public accountability. These ethical concerns sometimes conflict, pitting values against one another. How they should be balanced will vary on a case-by-case basis. This course discusses justifications for government action in public health, the tension between individual freedom and public health, issues of distributive justice in public health, and ethical guidelines for public health policymaking.
 </p>
@@ -707,97 +656,127 @@ province of Pakistan.
 </P style="TEXT-ALIGN: justify">
 
 
+    </div>
 
-
-
-<script>
-        
-const paragraphs = document.querySelectorAll('#textToRead p');
+    <script>
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const volumeControl = document.getElementById('volume');
+        const paragraphs = document.querySelectorAll('#textContainer p');
 
         let currentIndex = 0;
         let synth = window.speechSynthesis;
         let utterance = null;
         let isPaused = false;
-        let currentVolume = 1;
+        let blinkInterval = null;
 
-        function speakCurrentParagraph() {
-            // Stop any ongoing speech
-            synth.cancel();
-            clearHighlights();
+        function speakParagraph(index) {
+            // Clear any active blink intervals and reset previous highlights
+            clearInterval(blinkInterval);
+            paragraphs.forEach(p => p.style.visibility = 'visible');
 
-            if (currentIndex < 0 || currentIndex >= paragraphs.length) {
-                currentIndex = 0; // Reset if out of bounds
+            if (index < 0 || index >= paragraphs.length) {
+                stopReading();
                 return;
             }
 
-            // Highlight and blink the active paragraph
-            const activeParagraph = paragraphs[currentIndex];
-            activeParagraph.classList.add('speaking-now');
+            currentIndex = index;
+            synth.cancel(); // Stop any current speech
 
-            // Create new speech instance
-            utterance = new SpeechSynthesisUtterance(activeParagraph.innerText);
-            utterance.volume = currentVolume;
+            const currentParagraph = paragraphs[currentIndex];
+            
+            // Create blink effect on the active paragraph
+            blinkInterval = setInterval(() => {
+                currentParagraph.style.visibility = (currentParagraph.style.visibility === 'hidden' ? 'visible' : 'hidden');
+            }, 500);
 
-            // Automatically move to next line when finished
-            utterance.onend = function () {
-                clearHighlights();
-                if (currentIndex < paragraphs.length - 1) {
-                    currentIndex++;
-                    speakCurrentParagraph();
+            utterance = new SpeechSynthesisUtterance(currentParagraph.textContent);
+            utterance.volume = volumeControl.value;
+
+            utterance.onend = () => {
+                clearInterval(blinkInterval);
+                currentParagraph.style.visibility = 'visible'; // Ensure it's visible when done
+                if (!isPaused) {
+                    speakParagraph(currentIndex + 1); // Move to next automatically
                 }
             };
 
+            utterance.onerror = () => {
+                clearInterval(blinkInterval);
+                currentParagraph.style.visibility = 'visible';
+            };
+
             synth.speak(utterance);
-            isPaused = false;
         }
 
-        function startSpeaking() {
-            if (synth.paused && isPaused) {
-                synth.resume();
-            } else {
-                speakCurrentParagraph();
-            }
-        }
-
-        function pauseSpeaking() {
+        playPauseBtn.addEventListener('click', () => {
             if (synth.speaking && !synth.paused) {
                 synth.pause();
                 isPaused = true;
+                playPauseBtn.textContent = 'Continue';
+                clearInterval(blinkInterval);
+                paragraphs[currentIndex].style.visibility = 'visible'; // Keep visible while paused
+            } else if (synth.paused && isPaused) {
+                synth.resume();
+                isPaused = false;
+                playPauseBtn.textContent = 'Pause';
+                // Resume blinking
+                blinkInterval = setInterval(() => {
+                    paragraphs[currentIndex].style.visibility = (paragraphs[currentIndex].style.visibility === 'hidden' ? 'visible' : 'hidden');
+                }, 500);
+            } else {
+                isPaused = false;
+                playPauseBtn.textContent = 'Pause';
+                speakParagraph(currentIndex);
             }
-        }
+        });
 
-        function stopSpeaking() {
-            synth.cancel();
-            clearHighlights();
-            isPaused = false;
-        }
+        stopBtn.addEventListener('click', () => {
+            stopReading();
+        });
 
-        function moveNext() {
-            if (currentIndex < paragraphs.length - 1) {
-                currentIndex++;
-                speakCurrentParagraph();
-            }
-        }
-
-        function movePrevious() {
+        prevBtn.addEventListener('click', () => {
             if (currentIndex > 0) {
-                currentIndex--;
-                speakCurrentParagraph();
+                isPaused = false;
+                playPauseBtn.textContent = 'Pause';
+                speakParagraph(currentIndex - 1);
             }
-        }
+        });
 
-        function updateVolume() {
-            currentVolume = document.getElementById('volume').value;
-            if (synth.speaking) {
-                // To apply volume changes immediately, restart current paragraph
-                speakCurrentParagraph();
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < paragraphs.length - 1) {
+                isPaused = false;
+                playPauseBtn.textContent = 'Pause';
+                speakParagraph(currentIndex + 1);
             }
-        }
+        });
 
-        function clearHighlights() {
-            paragraphs.forEach(p => p.classList.remove('speaking-now'));
+        volumeControl.addEventListener('input', () => {
+            if (utterance) {
+                utterance.volume = volumeControl.value;
+            }
+        });
+
+        function stopReading() {
+            synth.cancel();
+            clearInterval(blinkInterval);
+            paragraphs.forEach(p => p.style.visibility = 'visible');
+            currentIndex = 0;
+            isPaused = false;
+            playPauseBtn.textContent = 'Play';
         }
     </script>
+
+
+
+    
+
+
+
+
+
 
 
 
